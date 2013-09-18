@@ -17,7 +17,7 @@ namespace itsabyrdservices.Models
         [Required(ErrorMessage = "Enter a description of your vehicle, i.e. Make, Model, Year")]
         public string Description { get; set; }
 
-        public virtual User User { get; set; }
+        public virtual Owner User { get; set; }
 
         [DataType(DataType.MultilineText)]
         public string Notes { get; set; }

@@ -7,7 +7,7 @@ using System.ComponentModel;
 
 namespace itsabyrdservices.Models
 {
-    public class User
+    public class Owner
     {
         public int UserID { get; set; }
 

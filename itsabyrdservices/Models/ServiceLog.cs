@@ -26,5 +26,8 @@ namespace itsabyrdservices.Models
         [DataType(DataType.MultilineText)]
         public string Notes { get; set;  }
 
+        public virtual Vehicle Vehicle { get; set; }
+
+
     }
 }

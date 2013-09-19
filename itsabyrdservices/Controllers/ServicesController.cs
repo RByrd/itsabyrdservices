@@ -12,17 +12,17 @@ using itsabyrdservices.Models;
 
 namespace itsabyrdservices.Controllers
 {
-    public class ServiceController : ApiController
+    public class ServicesController : ApiController
     {
-        private ServiceContext db = new ServiceContext();
+        private ServiceDBContext db = new ServiceDBContext();
 
-        // GET api/Service
+        // GET api/Services
         public IQueryable<Service> GetServices()
         {
             return db.Services;
         }
 
-        // GET api/Service/5
+        // GET api/Services/5
         [ResponseType(typeof(Service))]
         public IHttpActionResult GetService(int id)
         {
@@ -35,7 +35,7 @@ namespace itsabyrdservices.Controllers
             return Ok(service);
         }
 
-        // PUT api/Service/5
+        // PUT api/Services/5
         public IHttpActionResult PutService(int id, Service service)
         {
             if (!ModelState.IsValid)
@@ -69,7 +69,7 @@ namespace itsabyrdservices.Controllers
             return Ok();
         }
 
-        // POST api/Service
+        // POST api/Services
         [ResponseType(typeof(Service))]
         public IHttpActionResult PostService(Service service)
         {
@@ -84,7 +84,7 @@ namespace itsabyrdservices.Controllers
             return CreatedAtRoute("DefaultApi", new { id = service.ServiceID }, service);
         }
 
-        // DELETE api/Service/5
+        // DELETE api/Services/5
         [ResponseType(typeof(Service))]
         public IHttpActionResult DeleteService(int id)
         {
@@ -111,10 +111,4 @@ namespace itsabyrdservices.Controllers
             return db.Services.Count(e => e.ServiceID == id) > 0;
         }
     }
-
-    public class ServiceDBContext : DbContext
-    {
-        public DbSet<Service> Services { get; set; }
-    }
-
 }

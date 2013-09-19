@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel;
+using System.Data.Entity;
 
 
 namespace itsabyrdservices.Models
@@ -23,4 +24,10 @@ namespace itsabyrdservices.Models
         public int MonthInterval { get; set; }
 
     }
+
+    public class ServiceDBContext: DbContext
+    {
+        public DbSet<Service> Services { get; set; }
+    }
+
 }

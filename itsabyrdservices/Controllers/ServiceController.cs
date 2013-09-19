@@ -111,4 +111,10 @@ namespace itsabyrdservices.Controllers
             return db.Services.Count(e => e.ServiceID == id) > 0;
         }
     }
+
+    public class ServiceDBContext : DbContext
+    {
+        public DbSet<Service> Services { get; set; }
+    }
+
 }
